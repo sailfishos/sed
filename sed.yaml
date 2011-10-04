@@ -1,0 +1,24 @@
+Name: sed
+Summary: A GNU stream text editor
+Version: 4.1.5
+Release: 1
+Epoch: 1
+Group: Applications/Text
+License: GPLv2+
+URL: http://sed.sourceforge.net/
+Sources:
+    - ftp://ftp.gnu.org/pub/gnu/sed/sed-%{version}.tar.gz
+Description: |
+    The sed (Stream EDitor) editor is a stream or batch (non-interactive)
+    editor.  Sed takes text as input, performs an operation or set of
+    operations on the text and outputs the modified text.  The operations
+    that sed performs (substitutions, deletions, insertions, etc.) can be
+    specified in a script file or from the command line.
+
+PkgBR:
+    - glibc-devel
+Configure: configure
+ConfigOptions:
+    - --without-included-regex
+Builder: make
+Check: True

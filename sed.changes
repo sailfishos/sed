@@ -1,0 +1,18 @@
+* Tue May 24 2011 Anas Nashif <anas.nashif@intel.com> - 4.1.5
+- Repackage documentaion/translations
+
+* Wed Dec 29 2010 Yan Li <yan.i.li@intel.com> - 4.1.5
+- Revert to version 4.1.5 (BMC#11589)
+
+* Wed Feb 03 2010 Yi Yang <yi.y.yang@intel.com> - 4.2.1
+- Update to 4.2.1
+
+* Thu Sep 18 2008 Yi Yang <yi.y.yang@intel.com> 4.1.5
+- Fix a typo: sed.info.g to sed.info.gz
+
+* Fri Sep 12 2008 Yi Yang <yi.y.yang@intel.com> 4.1.5
+- Remove installation warnings of info files
+
+* Wed Jul 23 2008 Zhang Xin <xing.z.zhang@intel.com>
+- Mark man file and info file as %doc
+
