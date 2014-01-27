@@ -16,6 +16,7 @@ License:    GPLv2+
 URL:        http://sed.sourceforge.net/
 Source0:    ftp://ftp.gnu.org/pub/gnu/sed/sed-%{version}.tar.gz
 Source100:  sed.yaml
+Patch0:     sed-aarch64.patch
 BuildRequires:  glibc-devel
 
 
@@ -31,7 +32,7 @@ specified in a script file or from the command line.
 
 %prep
 %setup -q -n %{name}-%{version}
-
+%patch0 -p1
 # >> setup
 # << setup
 
