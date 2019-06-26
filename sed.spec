@@ -1,5 +1,3 @@
-%define _bindir /bin
-
 Name:       sed
 Summary:    A GNU stream text editor
 Version:    4.1.5
