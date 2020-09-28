@@ -1,3 +1,6 @@
+* Mon Sep 28 2020 Matti Kosola <matti.kosola@jolla.com> - 4.1.5+git1
+- Rename sed to gnu-sed. JB#48742
+
 * Thu Jan 03 2019 Tomi Leppänen <tomi.leppanen@jolla.com> - 4.1.5-2
 - [packaging] Rename sed-docs to sed-doc. Contributes to JB#38578
 
@@ -15,7 +18,3 @@
 
 * Fri Sep 12 2008 Yi Yang <yi.y.yang@intel.com> 4.1.5
 - Remove installation warnings of info files
-
-* Wed Jul 23 2008 Zhang Xin <xing.z.zhang@intel.com>
-- Mark man file and info file as %doc
-

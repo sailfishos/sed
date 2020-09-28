@@ -1,16 +1,16 @@
 %define _bindir /bin
 
-Name:       sed
+Name:       gnu-sed
 Summary:    A GNU stream text editor
-Version:    4.1.5
-Release:    2
-Epoch:      1
-Group:      Applications/Text
+Version:    4.1.5+git1
+Release:    0
 License:    GPLv2+
 URL:        http://sed.sourceforge.net/
-Source0:    ftp://ftp.gnu.org/pub/gnu/sed/sed-%{version}.tar.gz
+Source0:    sed-4.1.5.tar.gz
 Patch0:     sed-aarch64.patch
 BuildRequires:  glibc-devel
+Provides:   sed = 1:4.1.5+git1
+Obsoletes:  sed < 1:4.1.5+git1
 
 %description
 The sed (Stream EDitor) editor is a stream or batch (non-interactive)
@@ -21,22 +21,27 @@ specified in a script file or from the command line.
 
 %package doc
 Summary:   Documentation for %{name}
-Group:     Documentation
 Requires:  %{name} = %{version}-%{release}
-Obsoletes: %{name}-docs
+Provides:  sed-docs = 1:4.1.5+git1
+Obsoletes: sed-docs < 1:4.1.5+git1
 
 %description doc
 Man and info pages for %{name}.
 
+%package locale
+Summary: Translations and Locale for package %{name}
+
+%description locale
+This package provides translations for package %{name}.
+
 %prep
-%setup -q -n %{name}-%{version}
-%patch0 -p1
+%autosetup -p1 -n sed-4.1.5
 
 %build
 %configure --disable-static \
     --without-included-regex
 
-make %{?_smp_mflags}
+%make_build
 
 %install
 rm -rf %{buildroot}
@@ -44,13 +49,14 @@ rm -rf %{buildroot}
 
 rm -f ${RPM_BUILD_ROOT}/%{_infodir}/dir
 
-%find_lang %{name}
+%find_lang sed
 
 mkdir -p $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 install -m0644 -t $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} \
         AUTHORS BUGS ChangeLog README THANKS
 
-%lang_package
+%files locale -f sed.lang
+%defattr(-,root,root,-)
 
 %check
 make check
@@ -63,6 +69,6 @@ make check
 %files doc
 %defattr(-,root,root,-)
 %license COPYING.DOC
-%{_infodir}/%{name}.*
-%{_mandir}/man1/%{name}.*
+%{_infodir}/sed.*
+%{_mandir}/man1/sed.*
 %{_docdir}/%{name}-%{version}
