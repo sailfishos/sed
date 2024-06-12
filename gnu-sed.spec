@@ -2,12 +2,12 @@
 
 Name:       gnu-sed
 Summary:    A GNU stream text editor
-Version:    4.1.5+git1
+Version:    4.9+git1
 Release:    0
-License:    GPLv2+
-URL:        http://sed.sourceforge.net/
-Source0:    sed-4.1.5.tar.gz
-Patch0:     sed-aarch64.patch
+License:    GPLv3+
+URL:        https://www.gnu.org/software/sed/
+Source0:    sed-4.9.tar.xz
+Patch0:     sed-disable-tests.patch
 BuildRequires:  glibc-devel
 Provides:   sed = 1:4.1.5+git1
 Obsoletes:  sed < 1:4.1.5+git1
@@ -22,8 +22,6 @@ specified in a script file or from the command line.
 %package doc
 Summary:   Documentation for %{name}
 Requires:  %{name} = %{version}-%{release}
-Provides:  sed-docs = 1:4.1.5+git1
-Obsoletes: sed-docs < 1:4.1.5+git1
 
 %description doc
 Man and info pages for %{name}.
@@ -35,7 +33,7 @@ Summary: Translations and Locale for package %{name}
 This package provides translations for package %{name}.
 
 %prep
-%autosetup -p1 -n sed-4.1.5
+%autosetup -p1 -n sed-4.9
 
 %build
 %configure --disable-static \
@@ -44,7 +42,6 @@ This package provides translations for package %{name}.
 %make_build
 
 %install
-rm -rf %{buildroot}
 %make_install
 
 rm -f ${RPM_BUILD_ROOT}/%{_infodir}/dir
@@ -56,19 +53,15 @@ install -m0644 -t $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} \
         AUTHORS BUGS ChangeLog README THANKS
 
 %files locale -f sed.lang
-%defattr(-,root,root,-)
 
 %check
 make check
 
 %files
-%defattr(-,root,root,-)
 %license COPYING
 %{_bindir}/sed
 
 %files doc
-%defattr(-,root,root,-)
-%license COPYING.DOC
 %{_infodir}/sed.*
 %{_mandir}/man1/sed.*
 %{_docdir}/%{name}-%{version}
