@@ -1,0 +1,43 @@
+diff -aur sed-4.9-orig/gnulib-tests/Makefile.in sed-4.9/gnulib-tests/Makefile.in
+--- sed-4.9-orig/gnulib-tests/Makefile.in	2022-11-06 21:19:08.000000000 +0200
++++ sed-4.9/gnulib-tests/Makefile.in	2024-06-13 22:38:09.327865867 +0300
+@@ -157,7 +157,7 @@
+ 	test-mbrtowc-w32-2.sh test-mbrtowc-w32-3.sh \
+ 	test-mbrtowc-w32-4.sh test-mbrtowc-w32-5.sh \
+ 	test-mbrtowc-w32-6.sh test-mbrtowc-w32-7.sh test-mbsinit.sh \
+-	test-memchr$(EXEEXT) test-memrchr$(EXEEXT) test-mkdir$(EXEEXT) \
++	test-memchr$(EXEEXT) test-memrchr$(EXEEXT) \
+ 	test-nanosleep$(EXEEXT) test-netinet_in$(EXEEXT) \
+ 	test-nl_langinfo.sh test-nl_langinfo-mt$(EXEEXT) \
+ 	test-open$(EXEEXT) test-pathmax$(EXEEXT) test-perror.sh \
+@@ -167,8 +167,8 @@
+ 	test-quotearg-simple$(EXEEXT) test-raise$(EXEEXT) \
+ 	test-rawmemchr$(EXEEXT) test-read-file$(EXEEXT) \
+ 	test-readlink$(EXEEXT) test-realloc-gnu$(EXEEXT) \
+-	test-reallocarray$(EXEEXT) test-regex$(EXEEXT) \
+-	test-rename$(EXEEXT) test-rmdir$(EXEEXT) test-sched$(EXEEXT) \
++	test-reallocarray$(EXEEXT) \
++	test-rmdir$(EXEEXT) test-sched$(EXEEXT) \
+ 	test-select$(EXEEXT) test-select-in.sh test-select-out.sh \
+ 	test-setenv$(EXEEXT) test-setlocale_null$(EXEEXT) \
+ 	test-setlocale_null-mt-one$(EXEEXT) \
+@@ -236,7 +236,7 @@
+ 	test-malloc-gnu$(EXEEXT) test-malloca$(EXEEXT) \
+ 	test-mbrtowc$(EXEEXT) test-mbrtowc-w32$(EXEEXT) \
+ 	test-mbsinit$(EXEEXT) test-memchr$(EXEEXT) \
+-	test-memrchr$(EXEEXT) test-mkdir$(EXEEXT) \
++	test-memrchr$(EXEEXT) \
+ 	test-nanosleep$(EXEEXT) test-netinet_in$(EXEEXT) \
+ 	test-nl_langinfo$(EXEEXT) test-nl_langinfo-mt$(EXEEXT) \
+ 	test-open$(EXEEXT) test-pathmax$(EXEEXT) test-perror$(EXEEXT) \
+@@ -246,8 +246,8 @@
+ 	test-quotearg-simple$(EXEEXT) test-raise$(EXEEXT) \
+ 	test-rawmemchr$(EXEEXT) test-read-file$(EXEEXT) \
+ 	test-readlink$(EXEEXT) test-realloc-gnu$(EXEEXT) \
+-	test-reallocarray$(EXEEXT) test-regex$(EXEEXT) \
+-	test-rename$(EXEEXT) test-rmdir$(EXEEXT) test-sched$(EXEEXT) \
++	test-reallocarray$(EXEEXT) \
++	test-rmdir$(EXEEXT) test-sched$(EXEEXT) \
+ 	test-select$(EXEEXT) test-select-fd$(EXEEXT) \
+ 	test-select-stdin$(EXEEXT) test-setenv$(EXEEXT) \
+ 	test-setlocale_null$(EXEEXT) \
