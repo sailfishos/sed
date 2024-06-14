@@ -1,3 +1,6 @@
+* Thu Jun 13 2024 Matti Lehtimäki <matti.lehtimaki@jolla.com> - 4.9+git1
+- Update to version 4.9. JB#44356
+
 * Mon Sep 28 2020 Matti Kosola <matti.kosola@jolla.com> - 4.1.5+git1
 - Rename sed to gnu-sed. JB#48742
 
